@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Responsive Media Page</title>
+        <style>
+            body{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                line-height: 1.5;
+                background: linear-gradient(120deg,#4e42f8,#c0baf6);
+            }
+            header{
+                text-align: center;
+                padding: 50px 22px;
+                background: linear-gradient(130deg,#d6fae2);
+            }
+            header h1{
+                font-size: 3rem;
+                color:#abe0b6(25,208,253);
+                margin-bottom: 35px;
+                background: linear-gradient(120deg,#d6fb86,#dbf8a5);
+                border-radius: 33px;
+            }
+            header p{
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            header .media{
+                background: rgb(181, 254, 64);
+                color: rgb(17, 16, 15);
+                padding: 12px 30px;
+                font-size: 2rem;
+                border-radius: 10px;
+                box-shadow: 33px #000;
+                transition: transform 0.5s,box-shadow 0.5s;
+            }
+            header .media:hover{
+                background-color:#04f755;
+                font-weight: 400;
+                transform: translateY(-6px);
+                box-shadow:0 10px 20px burlywood(241,21,216);
+            }
+            .grid-view{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap:25px;
+                padding: 40px 20px;
+                max-width: 1150px;
+            }
+            .grid{
+                background: antiquewhite;
+                border-radius: 10px;
+                padding: 18px;
+                text-align: center;
+                box-shadow: #000;
+                transition: transform 0.5s, box-shadow 0.7s;
+            }
+            .grid:hover{
+                transform: translateY(-7px);
+                box-shadow: 0 12px 25px #cf06bf;
+            }
+            .grid h2{
+                font-size: 1.7rem;
+                margin-bottom: 18px;
+                color: darkorange;
+            }
+            .grid p{
+                font-size: 1rem;
+                color: rgb(0, 0, 0);
+            }
+            footer{
+                text-align: center;
+                padding: 20px;
+                background: #04f755;
+                font-weight: bold;
+            }
+            @media(max-width:1150px){
+                .grid-view{
+                    grid-template-columns: repeat(2,0.8fr);
+                }
+                header h1{
+                    font-size: 2.5rem;
+                }
+                header p{
+                    font-size: 0.5rem
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1><strong>Landing Page</strong></h1>
+            <p>Here we can experience the Responsive media Interface</p>
+            <a href=""class="media">Just begin!!</a>
+        </header>
+        <section class="grid-view">
+            <div class="grid">
+                <h2>Discover the Page</h2>
+                <p>Here is a innovative design which response visual and proper design</p>
+            </div>
+            <div class="grid">
+                <h2>Discover the second option</h2>
+                <p>Experience the seamless resopnse to all over the device and screen size</p>
+            </div>
+            <div class="grid">
+                <h2> Discover the third option</h2>
+                <p>Here all feel the dynamic design </p>
+            </div>
+            <div class="grid">
+                <h2> Discover the fourth option</h2>
+                <p>Innovation to bring intractive design </p>
+            </div>
+            <div class="grid">
+                <h2> Discover th fifth option</h2>
+                <p>End user can enjoy the edge cutting</p>
+            </div>
+        </section>
+        <footer>
+            <p>&copy;;2025 Responsive Design. All rights Provided<a href="https://www.youtube.com/embed/nYFq-aM84_Q?si=-IkaGsE7_yQxoG1k">Terms and Conditions</a></p>
+        </footer>
+    </body>
+</html>
