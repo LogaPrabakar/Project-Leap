@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title> Bird Animatio7n</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #87CEEB;
+                overflow: hidden;
+            }
+            .bird {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: fly 5s linear infinite;
+            }
+            .bird-body {
+                width: 50px;
+                height: 40px;
+                background-color: rgb(0, 255, 64);
+                border-radius: 50%;
+                position: relative;
+                z-index: 2;
+            }
+            .left.wings, .right.wings {
+                width: 30px;
+                height: 50px;
+                background-color: orange;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                animation: flap 0.5s ease-in-out infinite;
+            }
+            .left.wings {
+                left: -20px;
+                transform-origin: right bottom;
+            }
+            .right.wings {
+                right: -20px;
+                transform-origin: left bottom;
+            }
+            .fly {
+                width: 10px;
+                height: 10px;
+                background-color: black;
+                border-radius: 50%;
+                position: absolute;
+                top: 15px;
+                left: 40px;
+            }
+            @keyframes flap {
+                0%, 100% {
+                    transform: rotate(0deg);
+                }
+                50% {
+                    transform: rotate(30deg);
+                }
+            }
+            @keyframes fly {
+                0% {
+                    transform: translate(-50%, -50%) translateX(0);
+                }
+                100% {
+                    transform: translate(-50%, -50%) translateX(500px);
+                }
+        </style>
+    </head>
+    <body>
+        <div class="bird">
+            <div class="bird-body"></div>
+            <div  class="left wings"></div>
+            <div class="right wings"></div>
+            <div class="fly"></div>
+        </div>
+    </body>
+</html>
