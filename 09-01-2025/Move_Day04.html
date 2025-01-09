@@ -1,0 +1,42 @@
+<html>
+    <style>
+        #aa{
+            width: 444px;
+            height: 444px;
+            position: relative;
+            background: burlywood;
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            background: #000;
+        }
+    </style>
+    <body>
+        <p><button onclick="moove()">Click Me</button></p>
+        <div id="aa">
+            <div id="animate"></div>
+        </div>
+        <script>
+            function moove(){
+                let id=null;
+                const obj=document.getElementById("animate");
+                let move=0;
+                clearInterval(id);
+                id=setInterval(frame, 8);
+                //Function Definition
+                function frame(){
+                    if(move===350){
+                        clearInterval(id);
+                    }
+                    else{
+                        move++;
+                        obj.style.top=move+"px";
+                        obj.style.left=move+"px";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
