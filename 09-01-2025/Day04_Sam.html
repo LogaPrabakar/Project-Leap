@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #tag1 {
+            color: rgb(50, 239, 2);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            transition: transform 0.3s ease;
+        }
+        #tag2 {
+            transition: transform 0.3s ease;
+        }
+        #tag1:hover, #tag2:hover {
+            transform: scale(1.5);
+        }
+    </style>
+    <body>
+        <marquee behavior="scroll" direction="left">
+            <h1>Simple Design using JS</h1>
+        </marquee>
+        <p id="tag1">Text One</p>
+        <p id="tag2">Text Two</p>
+        <script>
+            document.getElementById("tag2").style.color = "red";
+            document.getElementById("tag2").style.fontFamily = "Arial";
+            document.getElementById("tag2").style.fontSize = "50px";
+        </script>
+    </body>
+</html>
