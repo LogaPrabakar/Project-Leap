@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Form Validation</title>
+        <style>
+            body{
+                font-family: 'Courier New', Courier, monospace;
+                margin: auto;
+                background-color: rgb(240, 199, 136);
+            }
+            .form{
+                max-width: 400px;
+                margin-bottom: auto;
+            }
+            .form-one{
+                margin-bottom: 20px solid;
+            }
+            lable{
+                display: block;
+                margin-bottom: 10px;
+            }
+            input{
+                padding: 10px;
+                width: 110px;
+                box-sizing: border-box;
+            }
+            button{
+                padding: 10px 20px;
+                background-color: rgb(233, 233, 254);
+                color: black;
+                border: 1px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: darkgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h2> Form With Validation</h2>
+        <form id="myForm">
+            <div class="form-one">
+            <label for ="username">User Name</label>
+            <input type="text" id="username" name="username">
+            <div class="error" id="usernameError"></div>
+            </div>
+            <div class="form-one">
+                <label for ="email">User Name</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="EmailError"></div>
+            </div>
+            <div class="form-one">
+                <label for ="password">User Name</label>
+                <input type="password" id="password" name="password">
+                <div class="error" id="PasswordError"></div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            document.getElementById("myForm").addEventListener("submit",function(event){
+                event.preventDefault();
+                //If no error throws
+                document.getElementById("usernameError").textContent="";
+                document.getElementById("EmailError").textContent="";
+                document.getElementById("PasswordError").textContent="";
+                const username=document.getElementById("username").value.trim();
+                const email=document.getElementById("email").value.trim();
+                const password=document.getElementById("password").value.trim();
+                    //UserName
+                let valid=true;
+                if(username===""){
+                    document.getElementById("usernameError").textContent="Username is required.";
+                    valid=false;
+                                }
+                    //Email
+                    if(email===""){
+                        document.getElementById("emailError").textContent="Email is required.";
+                        valid=false;
+                                }
+                    //Password
+                if(password===""){
+                    document.getElementById("PasswordError").textContent="Password is required.";
+                    valid=false;
+                                }
+                    //Overall
+                    if(valid){
+                        alert("Form Validation is Sucess");
+                }
+            });
+        </script>
+    </body>
+</html>
