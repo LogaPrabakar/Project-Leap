@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <title>Bulb On/Off</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .bulb {
+        width: 100px;
+        height: 150px;
+        background-color: #999;
+        border-radius: 50% 50% 40% 40%;
+        box-shadow: 0 0 30px rgba(255, 255, 0, 0);
+        transition: box-shadow 0.3s, background-color 0.3s;
+    }
+
+    .bulb.on {
+        background-color: #ffeb3b;
+        box-shadow: 0 0 30px rgba(255, 255, 0, 1);
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        background-color: #007BFF;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <div id="bulb" class="bulb"></div>
+    <button id="toggleButton">Turn On</button>
+
+    <script>
+        const bulb = document.getElementById('bulb');
+        const toggleButton = document.getElementById('toggleButton');
+
+        toggleButton.addEventListener('click', () => {
+        bulb.classList.toggle('on');
+        if (bulb.classList.contains('on')) {
+        toggleButton.textContent = 'Turn Off';
+    } else {
+        toggleButton.textContent = 'Turn On';
+    }
+    });
+    </script>
+</body>
+</html>
