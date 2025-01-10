@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Theme Animation</title>
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                background: #f0bae3;
+                margin: 0;
+                padding: 0;
+                transition: background 0.5s, color 0.5s;
+            }
+            .container {
+                width: 90%;
+                margin: auto;
+                text-align: center;
+                padding-top: 50px;
+            }
+            h2 {
+                font-size: 2rem;
+                font-weight: 500;
+                color: rgb(249, 5, 5);
+            }
+            .list {
+                list-style: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+            .lst-item {
+                background: rgb(191, 56, 56);
+                margin: 20px 0;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0px 5px 15px #000;
+                font-size: 1.2rem;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+                position: relative;
+            }
+            .lst-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 8px 20px #000;
+            }
+            .lst-item:before {
+                content: "";
+                position: absolute;
+                width: 7px;
+                height: 100%;
+                background: linear-gradient(to bottom right, rgb(127, 127, 244));
+                left: 0;
+                top: 0;
+                transition: width 0.4s;
+            }
+            .lst-item:hover:before {
+                width: 12px;
+            }
+            .button {
+                padding: 8px 16px;
+                background: rgb(27, 27, 248);
+                color: antiquewhite;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+                font-size: 1rem;
+            }
+            .button:hover {
+                background: chartreuse;
+            }
+            .dark-mode {
+                background: #090909;
+                color: aqua;
+            }
+            .dark-mode .lst-item {
+                background: rgb(222, 235, 222);
+                color: chocolate;
+                box-shadow: 0px 5px 15px #3f0c33;
+            }
+            .dark-mode .lst-item::before {
+                background: linear-gradient(to bottom right, #ff6b6b);
+            }
+            .dark-mode .button {
+                background: #278f1d;
+            }
+            .dark-mode .button:hover {
+                background: #f5e503;
+            }
+            .btn {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                color: #f5e503;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .btn:hover {
+                background: aquamarine;
+            }
+            .dark-mode .btn {
+                background: #f6eef4;
+                color: black;
+            }
+            .dark-mode .btn:hover {
+                background: limegreen;
+            }
+            @media (max-width: 780px) {
+                .container {
+                    width: 95%;
+                }
+                .lst-item {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn" onclick="DarkMode()">Dark Mode</button>
+        <div class="container">
+            <h2>Theme Animation using JS!!</h2>
+            <ul class="list">
+                <li class="lst-item">
+                    <span>JavaScript</span>
+                    <button class="button">Let's Start JS</button>
+                </li>
+                <li class="lst-item">
+                    <span>Master in JavaScript</span>
+                    <button class="button">Let's Start MJS</button>
+                </li>
+                <li class="lst-item">
+                    <span>Fullstack Development</span>
+                    <button class="button">Let's Start FSD</button>
+                </li>
+                <li class="lst-item">
+                    <span>CyberSecurity</span>
+                    <button class="button">Let's Start CYS</button>
+                </li>
+            </ul>
+        </div>
+        <script>
+            function DarkMode() {
+                document.body.classList.toggle("dark-mode");
+            }
+        </script>
+    </body>
+</html>
